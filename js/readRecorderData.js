@@ -23,7 +23,6 @@ catch (err)
 
 
 function onerror(error){
-	//
    console.log(error.name + ": " + error.message);
 }
 
