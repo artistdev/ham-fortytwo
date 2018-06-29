@@ -2,7 +2,7 @@
 var stepcount = "";
 
 // Retrieve data from Human Activity type of Pedometer
-var type = 'PEDOMETER';
+var type = "PEDOMETER";
 
 // Record step count data for 1 day
 var options = {
@@ -13,10 +13,10 @@ var options = {
 try {
 	// Start the recorder
 	tizen.humanactivitymonitor.startRecorder(type, options);
-	console.log('Start recording steps');
+	console.log("Start recording steps");
 } catch (err) {
 	// Log any erros for start recorder mehod
-	console.log(err.name + ': ' + err.message);
+	console.log(err.name + ": " + err.message);
 }
 
 function onerror(error) {
@@ -27,14 +27,14 @@ function onerror(error) {
 function onread(data) {
 	for (var idx = 0; idx < data.length; ++idx) {
 		console.log("*** " + idx);
-		console.log('totalStepCount: ' + data[idx].totalStepCount);
+		console.log("totalStepCount: " + data[idx].totalStepCount);
 		stepcount = data[idx].totalStepCount;
 		document.getElementById("total-step-count").innerHTML = stepcount;
 	}
 }
 
 function onchange() {
-	console.log('You are looking at your smart watch');
+	console.log("You are looking at your smart watch");
 
 	// instead of using query property we will use the 24 hour interval option a
 	tizen.humanactivitymonitor.readRecorderData(type, null, onread, onerror);
@@ -42,4 +42,4 @@ function onchange() {
 }
 
 // Start the Wrist_Up
-tizen.humanactivitymonitor.start('WRIST_UP', onchange);
+tizen.humanactivitymonitor.start("WRIST_UP", onchange);
