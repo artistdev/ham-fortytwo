@@ -34,12 +34,12 @@ tizen.humanactivitymonitor.start('WRIST_UP', onchange);
 //	for (var idx = 0; idx < data.length; ++idx) {
 //		console.log('Total step count: ' + data[idx].totalStepCount);
 //		stepcount = data[idx].totalStepCount;
+//		document.getElementById("total-step-count").innerHTML = stepcount;
 //	}
 //}
 //
 //try {
 //	tizen.humanactivitymonitor.readRecorderData(type, query, onread, onerror);
-//	document.getElementById("total-step-count").innerHTML = stepcount;
 //} catch (err) {
 //	console.log(err.name + ": " + err.message);
 //}
