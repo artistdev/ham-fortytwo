@@ -1,25 +1,24 @@
-var type = "PEDOMETER";
-var query = {};
+
 var stepcount = "";
+var query = {};
+var type = "PEDOMETER";
+
 function onerror(error) {
 	console.log(error.name + ": " + error.message);
 }
 
 function onread(data) {
 	for (var idx = 0; idx < data.length; ++idx) {
-		console.log('Total step count: ' + data[idx].totalStepCount);
-		stepcount = data[idx].totalStepCount;		
+		stepcount = data[idx].totalStepCount;	
+		document.getElementById("total-step-count").innerHTML = stepcount;
 	}
 }
-try {	
-	tizen.humanactivitymonitor.startRecorder(type);	
-	tizen.humanactivitymonitor.readRecorderData(type, query, onread, onerror);
-} catch (err) {
-	console.log(err.name + ": " + err.message);
+
+function onchange() {	
+	tizen.humanactivitymonitor.readRecorderData(type, query, onread, onerror)	
 }
 
-function onchange(){
-	document.getElementById("total-step-count").innerHTML = stepcount;
-}
+tizen.humanactivitymonitor.startRecorder(type,onerror);
 
-tizen.humanactivitymonitor.start("WRIST_UP", onchange);
+tizen.humanactivitymonitor.start("WRIST_UP", onchange, onerror);
+
