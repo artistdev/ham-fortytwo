@@ -1,21 +1,10 @@
-@font-face {
-    font-family: 'bebasregular';
-    src: url('../fonts/bebas/webfont.eot');
-    src: url('../fonts/bebas/webfont.eot?#iefix') format('embedded-opentype'),
-         /* url('../fonts/bebas/webfont.woff2') format('woff2'), */
-         url('../fonts/bebas/webfont.woff') format('woff'),
-         url('../fonts/bebas/webfont.ttf') format('truetype'),
-         url('../fonts/bebas/webfont.svg#bebasregular') format('svg');
-    font-weight: bold;
-    font-style: normal;
+* {
+	font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
 }
-/* * {
-    font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
-} */
 
 body {
-    margin: 0px auto;
-    background-color:#222;
+	margin: 0px auto;
+	background-color: #222;
 }
 
 .contents {
@@ -23,7 +12,7 @@ body {
 	display: -webkit-flex;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	height:320px;
+	height: 320px;
 }
 
 .content-padding {
@@ -34,26 +23,50 @@ body {
 }
 
 .content_text {
-	font-weight:bold;
-	font-size:5em;
-	color:#fff;
+	font-weight: bold;
+	font-size: 5em;
+	color: #fff;
 }
 
 /**/
 /* overide ui-page style */
-.ui-page{ 
-	background-image: url(../img/bg.png) ;
-    background-position: 0px 0px,center;
+@font-face {
+	font-family: 'bebasregular';
+	src: url('../fonts/custom/webfont.eot');
+	src: url('../fonts/custom/webfont.eot?#iefix')
+		format('embedded-opentype'),
+		/* url('../fonts/custom/webfont.woff2') format('woff2'), */
+         url('../fonts/custom/webfont.woff') format('woff'),
+		url('../fonts/custom/webfont.ttf') format('truetype'),
+		url('../fonts/custom/webfont.svg#bebasregular') format('svg');
+	font-weight: bold;
+	font-style: normal;
 }
-ui-title{
-	font-family: 'Quicksand', sans-serif;
+
+.ui-page {
+	background-image: url(../img/bg.png);
+	background-position: 0px 0px, center;
 }
-.ui-header .ui-title{
-	color:#000;
+
+.ui-header {
+	height: 3.75rem;
 }
-.style-step-count{
-  font-family: 'bebasregular', Arial, sans-serif;
-  color:#6600ff;
-  font-size:30px;
-  margin:0em 0;
+
+.ui-header .ui-title {
+	color: #000;
+	background: rgba(0, 0, 0, 0);
+}
+
+.style-step-count {
+	transform: skew(0deg, -20deg);
+	font-family: 'bebasregular', Arial, sans-serif;
+	color: #000;
+	font-size: 80px;
+	margin: 0.3em 0;
+	/* letter-spacing: .15em; */
+	text-shadow: -7px 9px 7px rgba(147, 150, 150, 0.79);
+}
+
+#custom-content-style {
+	margin-top: 55px;
 }
